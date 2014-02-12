@@ -29,12 +29,22 @@ controller.on( 'ready' , function(){
  
 });
 
-controller.on('frame', function(data) {
+controller.on('frame', function() {
   // your code here
-  frame = data;
+  
   // console.log('abc');
 });
 
   
 controller.connect();
+
+Leap.loop({enableGestures: true}, function(frame){
+  // console.log(frame.fingers.length);
+     if (frame.fingers[0]) {
+      var x = frame.fingers[0].tipPosition[0];
+      var y = frame.fingers[0].tipPosition[1];
+      var z = frame.fingers[0].tipPosition[2];
+      console.log(x);
+     }
+});
 
