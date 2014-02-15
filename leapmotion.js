@@ -25,8 +25,6 @@ controller.on( 'deviceDisconnected' , function() {
 // When the controller is ready, spawn the unicorn!
 controller.on( 'ready' , function(){
 
-  console.log('aaa');
- 
 });
 
 controller.on('frame', function() {
